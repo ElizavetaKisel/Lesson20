@@ -9,23 +9,23 @@ public class UserWrapper {
         String[] properties = userStr.split(", ");
 
 
-        for (String str: properties) {
+        for (String str : properties) {
 
             String prop = str.substring(0, str.indexOf(" "));
-            switch (prop){
+            switch (prop) {
                 case "id:":
                     long id = Long.parseLong(str.substring(4));
                     user.setId(id);
                     break;
-                case "name:" :
+                case "name:":
                     String name = str.substring(6);
                     user.setName(name);
                     break;
-                case "surname:"  :
+                case "surname:":
                     String surname = str.substring(9);
                     user.setSurname(surname);
                     break;
-                case "age:"  :
+                case "age:":
                     int age = Integer.parseInt(str.substring(5));
                     user.setAge(age);
                     break;
@@ -41,10 +41,11 @@ public class UserWrapper {
         return user;
     }
 
-    public static String userToString(User user){
+    public static String userToString(User user) {
 
         String str = new String();
         str = "id: " + user.getId() + ", name: " + user.getName() + ", surname: " + user.getSurname() + ", age: "
                 + user.getAge() + ", phoneNumber: " + user.getPhoneNumber();
         return str;
     }
+}
