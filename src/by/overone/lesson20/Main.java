@@ -8,9 +8,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        UserService userService = new UserServiceImpl();
-        do {
 
+        UserService userService = new UserServiceImpl();
+        boolean flag = true;
+        do {
+            if (flag == false){
+                break;
+            }
             System.out.println("1.Show all users\n2.Add user\n3.Remove user\n4.Search user by id\n5.Search user by full name\n6.End");
             Scanner scan = new Scanner(System.in);
             int n = InputData.inputN();
@@ -69,6 +73,9 @@ public class Main {
                         } else {
                             System.out.println("User not found");
                         }
+                        break;
+                    case 6:
+                        flag = false;
                         break;
 
                 }
