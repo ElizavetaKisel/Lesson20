@@ -48,4 +48,10 @@ public class UserWrapper {
                 + user.getAge() + ", phoneNumber: " + user.getPhoneNumber();
         return str;
     }
+
+    public static String [] fullNameToNames(String fullName){
+
+        String [] names = fullName.trim().split("\\s+");
+        return names;
+    }
 }
